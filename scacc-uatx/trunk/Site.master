@@ -14,11 +14,10 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    My ASP.NET Application
-                </h1>
+                    hola chistosa</h1>
             </div>
             <div class="loginDisplay">
-                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                tosa<asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
                         [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
                     </AnonymousTemplate>
