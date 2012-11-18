@@ -7,6 +7,52 @@
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 85px;
+            height: 97px;
+        }
+        .style2
+        {
+            font-family: Neuropol;
+        }
+        .menu
+        {
+            font-family: "MV Boli";
+        }
+        .menu
+        {
+            font-family: "Segoe Print";
+        }
+        .menu
+        {
+            font-family: "Simplified Arabic";
+        }
+        .menu
+        {
+            font-family: "Wingdings 3";
+        }
+        .menu
+        {
+            font-family: Meiryo;
+        }
+        .menu
+        {
+            font-family: Neuropol;
+        }
+        .style3
+        {
+            color: #FFFFFF;
+            padding: 8px 0px 0px 0px;
+            margin: 0px auto;
+            text-align: center;
+            line-height: normal;
+            font-family: Neuropol;
+            font-size: medium;
+            background-color: #FD4464;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -14,18 +60,11 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    hola chistosa</h1>
+                    <img alt="" class="style1" src="images/escudo_uat.png" /><span class="style2">Sistema 
+                    de control de acceso al centro de computo</span><img alt="" class="style1" 
+                        src="images/redWolf.ico" /></h1>
             </div>
             <div class="loginDisplay">
-                tosa<asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                    <AnonymousTemplate>
-                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>
-                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
-                    </LoggedInTemplate>
-                </asp:LoginView>
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
@@ -39,16 +78,15 @@
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 <p>
-                    Ya comenzaremos desde el 15 a ecribir codigo
-                </p>
+                    &nbsp;</p>
             </asp:ContentPlaceHolder>
         </div>
         <div class="clear">
         </div>
     </div>
-    <div class="footer">
+    <div class="style3">
         
-    </div>
+        Universidad Autonoma de Tlaxcala</div>
     </form>
 </body>
 </html>

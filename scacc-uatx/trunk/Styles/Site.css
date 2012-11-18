@@ -3,7 +3,7 @@
 
 body   
 {
-    background: #b6b7bc;
+    background: #fff;
     font-size: .80em;
     font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
     margin: 0px;
@@ -99,7 +99,7 @@ first child of the left and right table columns */
     position: relative;
     margin: 0px;
     padding: 0px;
-    background: #4b6c9e;
+    background: #FD4464;
     width: 100%;
 }
 
@@ -144,7 +144,7 @@ first child of the left and right table columns */
 
 div.hideSkiplink
 {
-    background-color:#3a4f63;
+    background-color:#CCCCCC;
     width:100%;
 }
 
