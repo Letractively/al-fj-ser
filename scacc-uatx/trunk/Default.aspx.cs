@@ -11,4 +11,14 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        DateTime Hoy = DateTime.Today;
+
+
+
+        string fecha_actual = Hoy.ToString("dd-MM-yyyy");
+
+        Label1.Text =  fecha_actual;
+    }
 }
