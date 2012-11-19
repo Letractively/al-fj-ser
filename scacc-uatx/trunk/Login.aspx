@@ -132,10 +132,7 @@
                 </asp:Panel>
             </td>
             <td class="style10">
-                <p>
-                    <asp:Label ID="statusLogin" runat="server"></asp:Label>
-                </p>
-                <asp:Panel ID="panLogin" runat="server">
+                <asp:Panel ID="panLogin" runat="server" BorderColor="Black">
                 <h2>Login</h2>
                     <table class="style4">
                         <tr>
@@ -149,7 +146,7 @@
                             <td class="style8">
                                 Password:</td>
                             <td>
-                                <asp:TextBox ID="passwordT" runat="server" Width="163px"></asp:TextBox>
+                                <asp:TextBox ID="passwordT" runat="server" Width="163px" TextMode="Password"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -157,13 +154,33 @@
                             </td>
                             <td style="margin-left: 40px" class="style9">
                                 <asp:Button ID="bLogin" runat="server" 
-                Text="Iniciar Sesion" />
+                Text="Iniciar Sesion" onclick="bLogin_Click" />
+                                <br />
+                                <br />
+                                <br />
+                                <asp:Label ID="verificarDatos" runat="server"></asp:Label>
                             </td>
                         </tr>
                     </table>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </asp:Panel>
                 </td>
         </tr>
     </table>
+    <asp:Panel ID="pSesionIniciada" runat="server" style="margin-bottom: 0px">
+       <h2>
+        Ya se ha iniciado secion en esta maquina como:&nbsp;
+        <asp:Label ID="lSesionIniciada" runat="server" style="font-family: Neuropol"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp; Si desea iniciar sesion con otra cuenta Cierre Sesion:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="bCerrarSesion" runat="server" Text="Cerrar Sesion" 
+               onclick="bCerrarSesion_Click" />
+        <br />
+        <br />
+        <br />
+        </h2>
+    </asp:Panel>
 </asp:Content>
 

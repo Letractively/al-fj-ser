@@ -65,6 +65,13 @@
                         src="images/redWolf.ico" /></h1>
             </div>
             <div class="loginDisplay">
+                <br />
+                <asp:Button ID="bRS" runat="server" onclick="bRS_Click" 
+                    Text="Iniciar Sesion o Registrar" Visible="False" />
+                <asp:Label ID="lLogin" runat="server" Visible="False"></asp:Label>
+                <br />
+                <asp:Button ID="bCerrarS" runat="server" onclick="bCerrarS_Click" 
+                    Text="Cerrar Sesion" Visible="False" />
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
@@ -77,12 +84,12 @@
         </div>
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                <p>
-                    &nbsp;</p>
             </asp:ContentPlaceHolder>
         </div>
         <div class="clear">
         </div>
+                <p>
+                    &nbsp;</p>
     </div>
     <div class="style3">
         
