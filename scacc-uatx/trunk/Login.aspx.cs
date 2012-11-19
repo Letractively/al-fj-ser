@@ -10,14 +10,28 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       
-        panLogin.Visible = false;
+        if (Request.Cookies["usuarioAdmin"] == null)
+        {
+           // lblMensaje.Text = "La cookie no existe, imposible leerla";
+
+            panLogin.Visible = true;
+            panRegister.Visible=true;
+            pSesionIniciada.Visible = false;
+        }
+        else
+        {
+            lSesionIniciada.Text = Server.HtmlEncode(Request.Cookies["usuarioAdmin"].Value);
+            panLogin.Visible = false;
+            panRegister.Visible = false;
+            pSesionIniciada.Visible = true;
+        }
+      
         
     }
     protected void bRegistrar_Click(object sender, EventArgs e)
     {
         String user = tUser.Text;
-        String password = tPassword.Text;
+        String password = passwordT.Text;
         String email = tEmail.Text;
         String nombre = tNombre.Text;
         String aPaterno = taPaterno.Text;
@@ -57,5 +71,63 @@ public partial class Default2 : System.Web.UI.Page
         }
         
         
+    }
+    protected void bLogin_Click(object sender, EventArgs e)
+    {
+    
+            String usuario, password;
+            String user = userT.Text;
+            String passw = passwordT.Text;
+            String cons = "select user, password from administrador where user='" + user + "' and password='" + passw + "';";
+            verificarDatos.Text = cons;
+            try
+            {
+                MySqlConnection Conexion = new MySqlConnection();
+                String cadena;
+                cadena = "Server=localhost; user=root; database=Laboratorio";
+                Conexion.ConnectionString = cadena;
+                Conexion.Open();
+
+                MySqlCommand command = new MySqlCommand(cons, Conexion);
+                MySqlDataReader resultado = command.ExecuteReader();
+
+                if (resultado.HasRows)
+                {
+                    // usuario = resultado[0].ToString();
+                    //password = resultado[1].ToString();
+
+                    verificarDatos.Text = "Datos validos";
+                    if (Request.Cookies["usuarioAdmin"] == null)
+                    {
+                        Response.Cookies["usuarioAdmin"].Value = user;
+                        panLogin.Visible = false;
+                        pSesionIniciada.Visible = true;
+                        Response.Redirect("Default.aspx");
+                    }
+
+
+                }
+                else
+                verificarDatos.Text = "Datos no Validos";
+                resultado.Close();
+                Conexion.Close();
+
+
+
+            }
+            catch (MySqlException ex)
+            {
+                // Response.Write("<script language='javascript'>alert('Verifica tus Datos')</script>");
+                verificarDatos.Text = "Usuario o Contraseña no validos ";
+            }
+      
+    }
+    protected void bCerrarSesion_Click(object sender, EventArgs e)
+    {
+        if (Request.Cookies["usuarioAdmin"] != null)
+        {
+            Response.Cookies["usuarioAdmin"].Expires = DateTime.Now.AddDays(-1);
+            Response.Redirect("Default.aspx");
+        }
     }
 }

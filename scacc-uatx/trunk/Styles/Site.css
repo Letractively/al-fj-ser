@@ -101,6 +101,9 @@ first child of the left and right table columns */
     padding: 0px;
     background: #FD4464;
     width: 100%;
+	top: 1px;
+	left: 0px;
+	height: 326px;
 }
 
 .header h1
