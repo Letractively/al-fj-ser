@@ -102,7 +102,7 @@ public partial class Default2 : System.Web.UI.Page
                         Response.Cookies["usuarioAdmin"].Value = user;
                         panLogin.Visible = false;
                         pSesionIniciada.Visible = true;
-                        Response.Redirect("Default.aspx");
+                        Response.Redirect("Login.aspx");
                     }
 
 

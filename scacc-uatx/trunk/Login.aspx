@@ -9,7 +9,7 @@
         }
         .style5
         {
-            width: 505px;
+            width: 471px;
             height: 201px;
         }
         .style6
@@ -27,10 +27,6 @@
         .style9
         {
             height: 64px;
-        }
-        .style10
-        {
-            height: 201px;
         }
         .style11
         {
@@ -66,10 +62,15 @@
             width: 113px;
             height: 26px;
         }
+        .style23
+        {
+            width: 944px;
+            height: 111px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-    <table class="style4">
+    <table class="style23">
         <tr>
             <td class="style5">
                 <asp:Panel ID="panRegister" runat="server">
@@ -131,7 +132,7 @@
                     </table>
                 </asp:Panel>
             </td>
-            <td class="style10">
+            <td class="style5">
                 <asp:Panel ID="panLogin" runat="server" BorderColor="Black">
                 <h2>Login</h2>
                     <table class="style4">
