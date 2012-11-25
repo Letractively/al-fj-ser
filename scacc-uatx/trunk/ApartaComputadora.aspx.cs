@@ -92,7 +92,7 @@ public partial class _Default : System.Web.UI.Page
 
             String fecha ="'"+DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day+"'";
             String hora = "'" + DateTime.Now.Hour.ToString() + ":"+DateTime.Now.Minute.ToString()+":"+DateTime.Now.Second.ToString()+"'";
-            String consulta = "Insert into computadora_apartada values (null, " + listComputadora.SelectedValue + ", " + tMatriculaAP.Text + ", " + fecha+ ", " + hora + ");";
+            String consulta = "Insert into computadora_apartada values (null, " + listComputadora.SelectedValue + ", " + tMatriculaAP.Text + ", " + fecha+ ", " + hora + ", '00:00:00');";
 
            // statusMaquina.Text = consulta;
          
