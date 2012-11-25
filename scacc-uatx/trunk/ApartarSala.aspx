@@ -7,6 +7,10 @@
         {
             width: 100%;
         }
+        .style5
+        {
+            font-size: medium;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
@@ -22,8 +26,9 @@
                 Matricula:
                 <br />
                 <br />
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tMatriculaAP" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;
+                <br />
                 <asp:Label ID="statusMaquina" runat="server"></asp:Label>
             </td>
         </tr>
@@ -44,4 +49,14 @@
             </td>
         </tr>
     </table>
+    <br />
+    <asp:Panel ID="Panel1" runat="server" Visible="False">
+        <span class="style5">Sesion Iniciada</span>
+        <asp:Label ID="Label1" runat="server" 
+            style="font-size: medium; font-family: 'Arial Alternative'"></asp:Label>
+        &nbsp;<asp:Label ID="Label2" runat="server" 
+            style="font-family: 'Arial Alternative'; font-size: medium"></asp:Label>
+        &nbsp;<asp:Label ID="Label3" runat="server" 
+            style="font-family: 'Arial Alternative'; font-size: medium"></asp:Label>
+    </asp:Panel>
 </asp:Content>

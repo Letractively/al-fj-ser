@@ -75,7 +75,6 @@ public partial class Default2 : System.Web.UI.Page
     protected void bLogin_Click(object sender, EventArgs e)
     {
     
-            String usuario, password;
             String user = userT.Text;
             String passw = passwordT.Text;
             String cons = "select user, password from administrador where user='" + user + "' and password='" + passw + "';";
