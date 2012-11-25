@@ -17,6 +17,7 @@ public partial class About : System.Web.UI.Page
     {
         Boolean rSalida = false;
 
+
         if (tMatriculaSalida.Text == "")
         {
             statusSalida.Text = "Debe ingresar Matricula";
