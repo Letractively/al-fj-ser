@@ -53,6 +53,7 @@
                 <br />
                 <asp:Button ID="bRegistrarSalida" runat="server" 
                     onclick="bRegistrarSalida_Click" Text="Regstrar Salida" />
+            &nbsp;&nbsp;&nbsp;
             </td>
             <td>
                 &nbsp;</td>

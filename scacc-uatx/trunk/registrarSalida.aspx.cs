@@ -17,7 +17,6 @@ public partial class About : System.Web.UI.Page
     {
         Boolean rSalida = false;
 
-
         if (tMatriculaSalida.Text == "")
         {
             statusSalida.Text = "Debe ingresar Matricula";
@@ -54,9 +53,34 @@ public partial class About : System.Web.UI.Page
             if (rSalida) 
             {
 
+                /////////////////////////////////////////////////////////
+
+                String consulta = "UPDATE computadoras SET disponibilidad = '1' WHERE id_computadora = (select id_computadora from computadora_apartada where matricula_alumno=" + tMatriculaSalida.Text.Trim()+ " and hora_salida='00:00:00');";
+                
+                try
+                {
+                    MySqlConnection Conexion = new MySqlConnection();
+                    String cadena;
+                    cadena = "Server=localhost; user=root; database=Laboratorio";
+                    Conexion.ConnectionString = cadena;
+                    Conexion.Open();
+                    MySqlCommand command = new MySqlCommand(consulta, Conexion);
+
+                    command.ExecuteNonQuery();
+                    Conexion.Close();
+
+                    statusSalida.Text = "Se ha registrado satisfactoriamente tu Salida ";
+                }
+                catch (MySqlException ex)
+                {
+                    //Response.Write("<script language='javascript'>alert('Verifica tus Datos')</script>");
+                    statusSalida.Text = "No se puede realizar operacion, Verifica tus Datos";
+                }
+                //////////////////////////////////////////////////////////
+
                 String hora = "'" + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString() + "'";
            
-                String consulta = "UPDATE computadora_apartada SET hora_salida = "+hora+" WHERE matricula_alumno ="+tMatriculaSalida.Text+" and hora_salida='00:00:00'";
+                 consulta = "UPDATE computadora_apartada SET hora_salida = "+hora+" WHERE matricula_alumno ="+tMatriculaSalida.Text+" and hora_salida='00:00:00'";
                //statusSalida.Text = consulta;
                 
                 try
@@ -67,7 +91,13 @@ public partial class About : System.Web.UI.Page
                     Conexion.ConnectionString = cadena;
                     Conexion.Open();
                     MySqlCommand command = new MySqlCommand(consulta, Conexion);
+                    
                     command.ExecuteNonQuery();
+
+                    consulta = "UPDATE `laboratorio`.`computadoras` SET `disponibilidad` = '1' WHERE `id_computadora` = (select id_computadora from computadora_apartada where matricula_alumno="+tMatriculaSalida.Text.ToString()+" and hora_salida='00:00:00');";
+
+               
+
                     Conexion.Close();
 
                     statusSalida.Text = "Se ha registrado satisfactoriamente tu Salida ";
@@ -78,6 +108,10 @@ public partial class About : System.Web.UI.Page
                     //Response.Write("<script language='javascript'>alert('Verifica tus Datos')</script>");
                     statusSalida.Text = "No se puede realizar operacion, Verifica tus Datos";
                 }
+                //////////////////////////////////////////////////
+              
+
+                ///////////////////////////////////////////////////////
             }
             
             
