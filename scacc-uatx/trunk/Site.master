@@ -60,7 +60,7 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    <img alt="" class="style1" src="images/escudo_uat.png" /><span class="style2">Sistema 
+                    <img alt="" class="style1" src="images/uatx.png" /><span class="style2">Sistema 
                     de control de acceso al centro de computo</span><img alt="" class="style1" 
                         src="images/redWolf.ico" /></h1>
             </div>
@@ -74,7 +74,8 @@
                     Text="Cerrar Sesion" Visible="False" />
             </div>
             <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" >
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
