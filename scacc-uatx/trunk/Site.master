@@ -75,10 +75,14 @@
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
-                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" >
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal"  >
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                        <asp:MenuItem NavigateUrl="~/Alumno.aspx" Text="Alumno" Value="Alumno"/>
+                        <asp:MenuItem NavigateUrl="~/admon.aspx" Text="Administrador" 
+                            Value="Administrador"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Ayuda.aspx" Text="Ayuda" Value="Ayuda">
+                        </asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>

@@ -37,14 +37,16 @@ public partial class Default2 : System.Web.UI.Page
         String aPaterno = taPaterno.Text;
         String aMaterno = taMaterno.Text;
 
+        String consulta = "Insert into administrador values (null, '" + nombre + "', '" + aPaterno + "', '" + aMaterno + "', '" + email + "', '" + user + "', '" + password + "'" + ");";
+
+
         if (user.Equals("") || password.Equals("") || email.Equals("") || nombre.Equals("") || aPaterno.Equals("") || aMaterno.Equals(""))
         {
             statusRegister.Text=" VERIFICA TUS DATOS";
         }
         else{
             //INSERT INTO `laboratorio`.`administrador` (`id_administrador`, `nombre`, `aPaterno`, `aMaterno`, `email`, `user`, `password`) VALUES ('1', 'Sergio', 'Molina', 'Guarneros', 'scmg_57@hotmail.com', 'SerWolf', 'lobito11');
-            String consulta = "Insert into administrador values (null, '" + nombre + "', '" + aPaterno + "', '" + aMaterno + "', '" + email + "', '" + user + "', '" + password + "'" + ");";
-
+            
             // statusRegister.Text = consulta;
 
             try
@@ -67,6 +69,8 @@ public partial class Default2 : System.Web.UI.Page
             {
                 //Response.Write("<script language='javascript'>alert('Verifica tus Datos')</script>");
                 statusRegister.Text = " Verifica tus Datos";
+
+                statusRegister.Text = consulta;
             }
         }
         

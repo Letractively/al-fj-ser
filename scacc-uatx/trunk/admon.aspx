@@ -15,6 +15,9 @@
             </asp:MenuItem>
             <asp:MenuItem Text="Apartar_Sala" Value="Apartar_Sala" NavigateUrl="~/apartar.aspx"></asp:MenuItem>
             <asp:MenuItem Text="Generar Reporte" Value="Apartar_Sala" NavigateUrl="~/Reporte.aspx"></asp:MenuItem>
+            <asp:MenuItem NavigateUrl="~/cerrarSesionesAlumnoComputadora.aspx" 
+                Text="Cerrar Sesiones de Alumno" Value="Cerrar Sesiones de Alumno">
+            </asp:MenuItem>
         </Items>
     </asp:Menu>
 </asp:Content>
